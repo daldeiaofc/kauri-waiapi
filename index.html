@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kauri Waiãpi - Daldeia</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #fff;
+    }
+
+    header {
+      background-color: #000;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .profile img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 4px solid #00f0ff;
+      box-shadow: 0 0 15px #00f0ff;
+      object-fit: cover;
+    }
+
+    .profile h1 {
+      font-size: 1.8em;
+      margin: 0;
+      color: #fff;
+      font-family: sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .coroa {
+      font-size: 0.7em;
+      color: #00f0ff;
+      filter: drop-shadow(0 0 3px #00f0ff);
+    }
+
+    section {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .bio {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .depoimento blockquote {
+      font-style: italic;
+      background-color: #1c1c1c;
+      border-left: 5px solid #00f0ff;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+    }
+
+    .depoimento span {
+      display: block;
+      text-align: right;
+      font-weight: bold;
+      color: #00f0ff;
+    }
+
+    .links {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .links a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 20px;
+      background-color: #00c37e;
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+
+    .links a:hover {
+      background-color: #00a864;
+    }
+
+    .timeline {
+      margin-top: 40px;
+    }
+
+    .timeline h2 {
+      text-align: center;
+      color: #00f0ff;
+    }
+
+    .timeline-item {
+      border-left: 3px solid #00f0ff;
+      padding-left: 15px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: '';
+      width: 12px;
+      height: 12px;
+      background-color: #00f0ff;
+      border-radius: 50%;
+      position: absolute;
+      left: -8px;
+      top: 8px;
+    }
+
+    .timeline-item h3 {
+      margin: 0;
+      color: #00f0ff;
+    }
+
+    .timeline-item p {
+      margin: 5px 0 0;
+    }
+
+    .faq details {
+      background-color: #1c1c1c;
+      padding: 10px 15px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .faq summary {
+      font-weight: bold;
+      color: #00f0ff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #000;
+      color: #777;
+    }
+
+    /* ESTILO DESTACADO DAS SEÇÕES */
+    .card-box {
+      background-color: #1a1a1a;
+      border: 1px solid #00f0ff;
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 40px;
+      box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+    }
+
+    .card-box h2 {
+      text-transform: uppercase;
+      color: #00f0ff;
+      margin-top: 0;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    .card-box ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .card-box li {
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-icon {
+      color: #00f0ff;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { filter: drop-shadow(0 0 2px #00f0ff); }
+      50% { filter: drop-shadow(0 0 6px #00f0ff); }
+      100% { filter: drop-shadow(0 0 2px #00f0ff); }
+    }
+
+    .card-box a {
+      color: #00c37e;
+      text-decoration: none;
+    }
+
+    .card-box a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="profile">
+      <img src="foto2.jpg" alt="Foto de perfil" />
+      <h1>@odaldeia <span class="coroa">👑</span></h1>
+    </div>
+  </header>
+
+  <section>
+    <h2>Kauri Waiãpi</h2>
+    <p class="bio">
+      Kauri Waiãpi, conhecido como Daldeia, sou influenciador indígena brasileiro da etnia Waiãpi. ganhei fama nas redes sociais com vídeos criativos, engraçados e cheios de orgulho da minha origem. Atualmente, eu compartilho minha vivência na aldeia Karapijuty, no Amapá, promovendo a cultura indígena com humor e sabedoria.
+    </p>
+
+    <div class="gallery">
+      <img src="imagem1.jpg" alt="Imagem 1">
+      <img src="imagem5.jpg" alt="Imagem 2">
+    </div>
+
+    <div class="depoimento">
+      <h2>Depoimentos</h2>
+
+      <blockquote>“Quando eu não tinha internet, não fazia ideia que não-indígenas tinham tanto preconceito.”
+        <span>— Kauri Waiãpi (Daldeia)</span>
+      </blockquote>
+
+      <blockquote>“Ser indígena não é fantasia, é resistência. A gente vive de verdade, com orgulho da nossa cultura.”
+        <span>— Kauri Waiãpi (Daldeia)</span>
+      </blockquote>
+
+      <blockquote>“Hoje eu sou ouvido por milhares, mas na aldeia minha voz já era forte. Só faltava o mundo escutar.”
+        <span>— Kauri Waiãpi (Daldeia)</span>
+      </blockquote>
+
+      <blockquote>"Eu só posso falar do meu povo, porque a cultura indígena, ao contrário do que pensam, é muito diversa. Existe vários povos indígenas, diversas línguas, costumes. Muitos não sabem nada sobre nós e nem querem saber, só sabem espalhar preconceito."
+        <span>— Kauri Waiãpi (Daldeia)</span>
+      </blockquote>
+    </div>
+
+    <div class="timeline">
+      <h2>Linha do Tempo</h2>
+
+      <div class="timeline-item">
+        <h3>2018</h3>
+        <p>Início das postagens culturais mostrando a vida na aldeia Karapijuty.</p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>2020</h3>
+        <p>Primeiro vídeo viral no TikTok com mais de 1 milhão de visualizações.</p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>2022</h3>
+        <p>Parcerias com influenciadores e presença em eventos de cultura indígena.</p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>2024</h3>
+        <p>Reconhecimento nacional como um dos maiores influenciadores indígenas do Brasil.</p>
+      </div>
+    </div>
+
+    <div class="projetos">
+      <h2>Projetos e Colaborações</h2>
+      <ul>
+        <li>Campanha "Orgulho de Ser Indígena" com influenciadores do norte.</li>
+        <li>Participação no documentário "A Voz da Aldeia".</li>
+        <li>Colaboração com o canal @CuriosidadesIndígenas.</li>
+      </ul>
+    </div>
+
+    <div class="card-box">
+      <h2>Certificados e Reconhecimentos</h2>
+      <ul>
+        <li><span class="card-icon">✔</span> Homenagem <strong>Semana da Cultura de Macapá</strong> – 2023</li>
+        <li><span class="card-icon">✔</span> Entrevista  <strong>Jornal Nacional</strong> sobre cultura e resistência indígena</li>
+      </ul>
+    </div>
+
+    <div class="card-box">
+      <h2>Na Mídia</h2>
+      <ul>
+        <li><span class="card-icon">▶</span> <a href="https://g1.globo.com/mt/mato-grosso/noticia/2021/04/19/indigena-influencer-diz-que-espera-desmistificar-preconceitos.ghtml?utm_source=chatgpt.com" target="_blank">Reportagem no G1 sobre jovens indígenas influenciadores</a></li>
+        <li><span class="card-icon">▶</span> <a href="https://youtube.com/@daldeia?si=94x0_YQf2pKu3i15" target="_blank">Vídeo no YouTube: “Conheça Daldeia - O influencer da floresta”</a></li>
+      </ul>
+    </div>
+
+    <div class="faq">
+      <h2>Perguntas Frequentes</h2>
+      <details>
+        <summary>Como posso apoiar seu trabalho?</summary>
+        <p>Você pode curtir, comentar, compartilhar e também apoiar através de doações pelas redes sociais.</p>
+      </details>
+      <details>
+        <summary>Quais são os próximos projetos?</summary>
+        <p>Estamos trabalhando em uma série sobre saberes tradicionais e viagens culturais entre aldeias.</p>
+      </details>
+      <details>
+        <summary>Você faz parcerias?</summary>
+        <p>Sim! Se tiver interesse, entre em contato via Instagram @odaldeia.</p>
+      </details>
+    </div>
+
+    <div class="links">
+      <a href="https://www.tiktok.com/@odaldeia" target="_blank">TikTok Oficial</a>
+      <a href="https://www.instagram.com/odaldeia" target="_blank">Instagram</a>
+      <a href="https://www.youtube.com/channel/UCs9ntUGxp3vv_8-xQ2RjXdg" target="_blank">YouTube</a>
+      <a href="https://www.tiktok.com/@daaldeiaofc" target="_blank">Me siga no TikTok</a>
+      <a href="https://k.kwai.com/u/@daldeia/3jgpCxj6" target="_blank">Kwai</a>
+    </div>
+  </section>
+
+  <footer>
+    Criado por @daaldeiaofc
+  </footer>
+
+</body>
+</html>
