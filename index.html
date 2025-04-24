@@ -197,6 +197,22 @@
       gap: 8px;
     }
 
+  @keyframes neon-glow {
+    0% {
+      box-shadow: 0 0 10px #00f0ff;
+    }
+    100% {
+      box-shadow: 0 0 30px #00f0ff;
+    }
+  }
+
+  .video-carousel-section h2 {
+    text-align: center;
+    color: #00f0ff;
+    font-size: 2em;
+    margin-top: 30px;
+    text-shadow: 0 0 10px #00f0ff;
+  }
     .card-icon {
       color: #00f0ff;
       animation: pulse 2s infinite;
@@ -216,15 +232,80 @@
     .card-box a:hover {
       text-decoration: underline;
     }
+    .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.icon {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #111;
+  box-shadow: 0 0 20px #0ff, 0 0 40px #0ff inset;
+  animation: rotateBorder 5s linear infinite;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.icon img {
+  width: 30px;
+  height: 30px;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+@keyframes rotateBorder {
+  0% {
+    box-shadow: 0 0 20px #0ff, 0 0 40px #0ff inset;
+  }
+  50% {
+    box-shadow: 0 0 30px #0ff, 0 0 60px #0ff inset;
+  }
+  100% {
+    box-shadow: 0 0 20px #0ff, 0 0 40px #0ff inset;
+  }
+}
+.icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+ .email-link {
+      display: inline-block;
+      color: #00ffff;
+      background-color: #222;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      box-shadow: 0 0 10px #00ffff;
+      transition: all 0.3s ease;
+    }
+
+    .email-link:hover {
+      color: #222;
+      background-color: #00ffff;
+      box-shadow: 0 0 20px #00ffff;
+    }
   </style>
 </head>
 <body>
-
   <header>
     <div class="profile">
       <img src="foto2.jpg" alt="Foto de perfil" />
       <h1>@odaldeia <span class="coroa">👑</span></h1>
     </div>
+
   </header>
 
   <section>
@@ -234,8 +315,8 @@
     </p>
 
     <div class="gallery">
-      <img src="imagem1.jpg" alt="Imagem 1">
-      <img src="imagem5.jpg" alt="Imagem 2">
+      <img src="foto3.jpg" alt="Imagem 3">
+      <img src="foto4.jpg" alt="Imagem 4">
     </div>
 
     <div class="depoimento">
@@ -281,7 +362,6 @@
         <p>Reconhecimento nacional como um dos maiores influenciadores indígenas do Brasil.</p>
       </div>
     </div>
-
     <div class="projetos">
       <h2>Projetos e Colaborações</h2>
       <ul>
@@ -294,8 +374,9 @@
     <div class="card-box">
       <h2>Certificados e Reconhecimentos</h2>
       <ul>
-        <li><span class="card-icon">✔</span> Homenagem <strong>Semana da Cultura de Macapá</strong> – 2023</li>
-        <li><span class="card-icon">✔</span> Entrevista  <strong>Jornal Nacional</strong> sobre cultura e resistência indígena</li>
+        <li><span class="card-icon">✔</span> Homenagem <strong></strong>Semana da Cultura de Macapá</strong> – 2023</li>
+        <li><span class="card-icon">✔</span> Entrevista  <strong></strong>Jornal Nacional</strong> sobre cultura e resistência indígena</li>
+         <li><span class="card-icon">✔</span> Host do podcast  <strong></strong></strong> Fui convidado para ser locutor do podcast "Papo dos Isolados", produzido pela coordenação das Organizações Indígena da Amazônia Brasileira (COIAB).</li>
       </ul>
     </div>
 
@@ -303,15 +384,17 @@
       <h2>Na Mídia</h2>
       <ul>
         <li><span class="card-icon">▶</span> <a href="https://g1.globo.com/mt/mato-grosso/noticia/2021/04/19/indigena-influencer-diz-que-espera-desmistificar-preconceitos.ghtml?utm_source=chatgpt.com" target="_blank">Reportagem no G1 sobre jovens indígenas influenciadores</a></li>
-        <li><span class="card-icon">▶</span> <a href="https://youtube.com/@daldeia?si=94x0_YQf2pKu3i15" target="_blank">Vídeo no YouTube: “Conheça Daldeia - O influencer da floresta”</a></li>
+        <li><span class="card-icon">▶</span> <a href="https://tiktok.com/@daaldeiaofc?si=94x0_YQf2pKu3i15" target="_blank">Vídeo no tik tok: “Conheça Daldeia - O influencer da floresta”</a></li>
       </ul>
     </div>
 
+  </div>
+</div>
     <div class="faq">
       <h2>Perguntas Frequentes</h2>
       <details>
         <summary>Como posso apoiar seu trabalho?</summary>
-        <p>Você pode curtir, comentar, compartilhar e também apoiar através de doações pelas redes sociais.</p>
+        <p>Você pode curtir, comentar, compartilhar e também apoiar pelas redes sociais.</p>
       </details>
       <details>
         <summary>Quais são os próximos projetos?</summary>
@@ -321,19 +404,26 @@
         <summary>Você faz parcerias?</summary>
         <p>Sim! Se tiver interesse, entre em contato via Instagram @odaldeia.</p>
       </details>
-    </div>
+   </div>
 
-    <div class="links">
-      <a href="https://www.tiktok.com/@odaldeia" target="_blank">TikTok Oficial</a>
-      <a href="https://www.instagram.com/odaldeia" target="_blank">Instagram</a>
-      <a href="https://www.youtube.com/channel/UCs9ntUGxp3vv_8-xQ2RjXdg" target="_blank">YouTube</a>
-      <a href="https://www.tiktok.com/@daaldeiaofc" target="_blank">Me siga no TikTok</a>
-      <a href="https://k.kwai.com/u/@daldeia/3jgpCxj6" target="_blank">Kwai</a>
-    </div>
+    <div class="social-icons">
+  <a href="https://youtube.com/@daldeia?si=qIs5QBhXBr4nRhox" target="_blank" class="icon">
+    <img src="youtube.png" alt="Facebook">
+  </a>
+  <a href="https://www.instagram.com/daldeiaorei?igsh=YzljYTk1ODg3Zg==" target="_blank" class="icon">
+    <img src="instagram.png" alt="Instagram">
+  </a>
+  <a href="https://www.tiktok.com/@daaldeiaofc" target="_blank" class="icon">
+  <img src="tiktok.png" alt="TikTok">
+</a>
+  <a href="https://k.kwai.com/u/@daldeia/dCJrGXbS" target="_blank" class="icon">
+    <img src="kwai2.png" alt="Kwai">
+  </a>
+</div>
   </section>
-
+ 
   <footer>
-    Criado por @daaldeiaofc
+    Criado por @daaldeiaofc 
   </footer>
 
 </body>
