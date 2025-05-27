@@ -297,6 +297,53 @@
       background-color: #00ffff;
       box-shadow: 0 0 20px #00ffff;
     }
+body {
+      background: black;
+      color: #00ccff;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      flex-direction: column;
+    }
+
+    .titulo {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px #00ccff;
+    }
+
+    .contador-container {
+      display: flex;
+      gap: 20px;
+    }
+
+    .contador-box {
+      text-align: center;
+    }
+
+    .numero {
+      font-size: 2.5em;
+      font-weight: bold;
+      animation: brilho 1s infinite;
+    }
+
+    .label {
+      font-size: 1em;
+      margin-top: 5px;
+    }
+
+    @keyframes brilho {
+      0%, 100% { text-shadow: 0 0 10px #00ccff; }
+      50% { text-shadow: 0 0 30px #00ccff; }
+    }
+    .email-link:hover {
+      color: #222;
+      background-color: #00ffff;
+      box-shadow: 0 0 20px #00ffff;
+    }
+   
   </style>
 </head>
 <body>
@@ -421,7 +468,61 @@
   </a>
 </div>
   </section>
- 
+ <body>
+
+  <div class="titulo">Kaiur Daldeia</div>
+
+  <div class="contador-container">
+    <div class="contador-box">
+      <div id="seguidores" class="numero">0</div>
+      <div class="label">Seguidores</div>
+    </div>
+    <div class="contador-box">
+      <div id="curtidas" class="numero">0</div>
+      <div class="label">Curtidas</div>
+    </div>
+    <div class="contador-box">
+      <div id="seguindo" class="numero">0</div>
+      <div class="label">Seguindo</div>
+    </div>
+  </div>
+
+  <script>
+    const seguidores = document.getElementById('seguidores');
+    const curtidas = document.getElementById('curtidas');
+    const seguindo = document.getElementById('seguindo');
+
+    let numSeg = 0, numCurt = 0, numSeguindo = 0;
+    const maxSeg = 3500000;
+    const maxCurt = 50200000;
+    const maxSeguindo = 266;
+
+    function formatarNumero(numero) {
+      return numero >= 1000000
+        ? (numero / 1000000).toFixed(1).replace('.', ',') + ' mi'
+        : numero.toLocaleString('pt-BR');
+    }
+
+    setInterval(() => {
+      numSeg += 5000;
+      if (numSeg > maxSeg) numSeg = 0;
+      seguidores.textContent = formatarNumero(numSeg);
+    }, 30);
+
+    setInterval(() => {
+      numCurt += 100000;
+      if (numCurt > maxCurt) numCurt = 0;
+      curtidas.textContent = formatarNumero(numCurt);
+    }, 30);
+
+    setInterval(() => {
+      numSeguindo += 1;
+      if (numSeguindo > maxSeguindo) numSeguindo = 0;
+      seguindo.textContent = numSeguindo;
+    }, 100);
+  </script>
+
+ </body>
   <footer>
     Criado por @daaldeiaofc 
   </footer>
